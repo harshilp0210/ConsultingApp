@@ -17,7 +17,8 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Why Choose Us', href: '/why-choose-us' },
     { name: 'Services', href: '#services' },
     { name: 'Success Stories', href: '#success-stories' },
     { name: 'Contact', href: '/contact' },
@@ -92,13 +93,7 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-2xl border-t border-slate-100">
-              <Link href="/services/student-visa" className="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium">Student Visa</Link>
-              <Link href="/about" className="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium">About Us</Link>
-              <Link href="/why-choose-us" className="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium">Why Choose Us</Link>
-              <Link href="/contact" className="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium">Contact</Link>
-              <Link href="/contact" className="block px-3 py-2 text-blue-600 font-bold">Book Consultation</Link>
-            </div>
+
             <div className="pt-8 border-t border-slate-100">
               <Link
                 href="/contact"
