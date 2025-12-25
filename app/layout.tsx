@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} text-slate-900 bg-slate-50`}>
+      <body className={`${inter.className} text-foreground bg-background antialiased`}>
         <Navbar />
         <main className="min-h-screen">
           {children}

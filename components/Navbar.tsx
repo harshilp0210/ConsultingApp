@@ -1,46 +1,62 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Phone, User, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '#services' },
+    { name: 'Success Stories', href: '#success-stories' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <div className="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-              UK
+        <div className="flex justify-between items-center">
+          {/* Logo - Matrix */}
+          <Link href="/" className="flex-shrink-0 flex items-center gap-3 group">
+            <div className="relative w-10 h-10 overflow-hidden rounded-full shadow-lg border border-slate-200 group-hover:scale-105 transition-transform">
+              <img
+                src="/logo.jpg"
+                alt="Matrix Logo"
+                className="object-cover w-full h-full"
+              />
             </div>
-            <span className="font-bold text-2xl text-slate-900 tracking-tight">
-              VisaExperts<span className="text-blue-600">.</span>
+            <span className={`font-bold text-2xl tracking-tight transition-colors ${scrolled ? 'text-slate-900' : 'text-slate-900'}`}>
+              Matrix
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-slate-600 hover:text-blue-900 font-medium transition-colors">
-              Home
-            </Link>
-            <Link href="#services" className="text-slate-600 hover:text-blue-900 font-medium transition-colors">
-              Services
-            </Link>
-            <Link href="#success-stories" className="text-slate-600 hover:text-blue-900 font-medium transition-colors">
-              Success Stories
-            </Link>
-            <Link href="/contact" className="text-slate-600 hover:text-blue-900 font-medium transition-colors">
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase tracking-wide"
+              >
+                {link.name}
+              </Link>
+            ))}
             <Link
               href="/contact"
-              className="bg-blue-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-800 transition-all shadow-lg hover:shadow-blue-900/20 flex items-center gap-2"
+              className="btn-primary px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide"
             >
-              <Phone className="w-4 h-4" />
-              Book Consultation
+              Consult Now
             </Link>
           </div>
 
@@ -48,50 +64,38 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-blue-900 focus:outline-none"
+              className="text-slate-900 hover:text-blue-600 focus:outline-none transition-colors p-2"
             >
-              {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200">
-          <div className="px-4 pt-2 pb-6 space-y-2">
-            <Link
-              href="/"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-900"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="#services"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-900"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="#success-stories"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-900"
-              onClick={() => setIsOpen(false)}
-            >
-              Success Stories
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-900"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-            <div className="pt-4 px-4">
+      <div
+        className={`md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-300 ease-in-out border-l border-slate-200 shadow-2xl`}
+      >
+        <div className="flex justify-end p-6">
+          {/* Close button handled by the overlay logic usually, but here we reuse the toggle */}
+        </div>
+        <div className="pt-24 pb-8 px-8 h-full overflow-y-auto">
+          <div className="flex flex-col space-y-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-3xl font-bold text-slate-900 hover:text-blue-600 transition-colors tracking-tight"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <div className="pt-8 border-t border-slate-100">
               <Link
                 href="/contact"
-                className="block w-full text-center bg-blue-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800"
+                className="btn-primary w-full py-4 rounded-xl font-bold text-lg justify-center flex shadow-xl shadow-blue-600/20"
                 onClick={() => setIsOpen(false)}
               >
                 Book Consultation
@@ -99,7 +103,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

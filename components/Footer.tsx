@@ -8,12 +8,16 @@ export default function Footer() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div>
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-                                UK
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="relative w-8 h-8 overflow-hidden rounded-full border border-slate-700">
+                                <img
+                                    src="/logo.jpg"
+                                    alt="Matrix Logo"
+                                    className="object-cover w-full h-full"
+                                />
                             </div>
                             <span className="font-bold text-xl text-white tracking-tight">
-                                VisaExperts<span className="text-blue-500">.</span>
+                                Matrix
                             </span>
                         </div>
                         <p className="text-slate-400 mb-6 leading-relaxed">
@@ -49,15 +53,15 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-blue-500 shrink-0" />
-                                <span>123 Visa Street, London, EC1A 1BB, United Kingdom</span>
+                                <span className="font-medium">London, United Kingdom</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                                <span>+44 20 7123 4567</span>
+                                <span className="font-medium">+44 7404 408 648</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-                                <span>info@ukvisaexperts.com</span>
+                                <span className="font-medium">matrixvisa07@gmail.com</span>
                             </li>
                         </ul>
                     </div>
@@ -65,7 +69,7 @@ export default function Footer() {
 
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-slate-500">
-                        © 2024 VisaExperts Ltd. All rights reserved. Regulated by OISC.
+                        © 2024 Matrix Visa Consultancy. All rights reserved. Regulated by OISC.
                     </p>
                     <div className="flex gap-4">
                         <Link href="#" className="text-slate-400 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></Link>
@@ -78,7 +82,7 @@ export default function Footer() {
 
             {/* Floating WhatsApp Button */}
             <Link
-                href="https://wa.me/447123456789"
+                href="https://wa.me/447404408648"
                 target="_blank"
                 className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 z-50 flex items-center gap-2 font-bold"
             >
