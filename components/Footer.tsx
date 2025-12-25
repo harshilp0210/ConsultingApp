@@ -28,10 +28,11 @@ export default function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h4 className="text-white font-bold text-lg mb-6">Quick Links</h4>
-                        <ul className="space-y-3">
-                            <li><Link href="#" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-                            <li><Link href="#services" className="hover:text-blue-400 transition-colors">Our Services</Link></li>
-                            <li><Link href="#success-stories" className="hover:text-blue-400 transition-colors">Testimonials</Link></li>
+                        <ul className="space-y-4">
+                            <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
+                            <li><Link href="/why-choose-us" className="hover:text-blue-400 transition-colors">Why Choose Us</Link></li>
+                            <li><Link href="/#services" className="hover:text-blue-400 transition-colors">Our Services</Link></li>
+                            <li><Link href="/#success-stories" className="hover:text-blue-400 transition-colors">Testimonials</Link></li>
                             <li><Link href="/contact" className="hover:text-blue-400 transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
