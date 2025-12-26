@@ -19,25 +19,26 @@ export default function Navbar() {
   const navLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Why Choose Us', href: '/why-choose-us' },
-    { name: 'Services', href: '#services' },
-    { name: 'Success Stories', href: '#success-stories' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Success Stories', href: '/#success-stories' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
+
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo - Matrix */}
           <Link href="/" className="flex-shrink-0 flex items-center gap-3 group">
-            <div className="relative w-10 h-10 overflow-hidden rounded-full shadow-lg border border-slate-200 group-hover:scale-105 transition-transform">
+            <div className="relative w-20 h-20 overflow-hidden rounded-full shadow-lg border-2 border-slate-700 group-hover:border-amber-500 transition-colors">
               <img
-                src="/logo.jpg"
+                src="/logo-new.png"
                 alt="Matrix Logo"
                 className="object-cover w-full h-full"
               />
             </div>
-            <span className={`font-bold text-2xl tracking-tight transition-colors ${scrolled ? 'text-slate-900' : 'text-slate-900'}`}>
+            <span className={`font-bold text-2xl tracking-tight transition-colors ${scrolled ? 'text-slate-100' : 'text-slate-100'}`}>
               Matrix
             </span>
           </Link>
@@ -48,7 +49,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase tracking-wide"
+                className="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors uppercase tracking-wide"
               >
                 {link.name}
               </Link>
@@ -65,7 +66,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-900 hover:text-blue-600 focus:outline-none transition-colors p-2"
+              className="text-slate-100 hover:text-amber-500 focus:outline-none transition-colors p-2"
             >
               {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
@@ -75,8 +76,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-300 ease-in-out border-l border-slate-200 shadow-2xl`}
+        className={`md:hidden fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-300 ease-in-out border-l border-slate-800 shadow-2xl`}
       >
         <div className="flex justify-end p-6">
           {/* Close button handled by the overlay logic usually, but here we reuse the toggle */}
@@ -87,17 +88,17 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-3xl font-bold text-slate-900 hover:text-blue-600 transition-colors tracking-tight"
+                className="text-3xl font-bold text-slate-100 hover:text-amber-500 transition-colors tracking-tight"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
 
-            <div className="pt-8 border-t border-slate-100">
+            <div className="pt-8 border-t border-slate-800">
               <Link
                 href="/contact"
-                className="btn-primary w-full py-4 rounded-xl font-bold text-lg justify-center flex shadow-xl shadow-blue-600/20"
+                className="btn-primary w-full py-4 rounded-xl font-bold text-lg justify-center flex shadow-xl shadow-amber-500/20"
                 onClick={() => setIsOpen(false)}
               >
                 Book Consultation

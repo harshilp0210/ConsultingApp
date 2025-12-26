@@ -26,16 +26,11 @@ const services = [
         description: "Reunite with your loved ones. We handle complex family visa applications with care and precision.",
         link: "/services/family"
     },
-    {
-        icon: Globe,
-        title: "British Citizenship",
-        description: "The final step in your journey. Expert assistance with naturalisation and registration applications.",
-        link: "/services/citizenship"
-    },
+
     {
         icon: Plane,
-        title: "Visitor Visas",
-        description: "Expert assistance for USA, Canada, Australia, New Zealand, Schengen Countries, Japan, and China.",
+        title: "Tourist & Visitor Visas",
+        description: "Expert assistance for USA, Canada, Australia, New Zealand, Schengen Visa (Europe), Japan, and China.",
         link: "/services/visitor"
     },
     {
@@ -48,13 +43,13 @@ const services = [
 
 export default function ServicesGrid() {
     return (
-        <section id="services" className="py-24 bg-white">
+        <section id="services" className="py-24 bg-slate-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                        Our Expertise. <span className="text-blue-600">Your Success.</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Our Expertise. <span className="text-amber-500">Your Success.</span>
                     </h2>
-                    <p className="text-xl text-slate-600 leading-relaxed">
+                    <p className="text-xl text-slate-400 leading-relaxed">
                         Navigating UK immigration law can be complex. We provide clear, strategic advice tailored to your specific circumstances.
                     </p>
                 </div>
@@ -63,25 +58,25 @@ export default function ServicesGrid() {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="group bg-white border border-slate-200 p-8 rounded-2xl hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                            className="group bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
                         >
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-                            <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                            <div className="w-14 h-14 bg-slate-950 rounded-xl flex items-center justify-center text-amber-500 mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors duration-300">
                                 <service.icon className="w-7 h-7" />
                             </div>
 
-                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-500 transition-colors">
                                 {service.title}
                             </h3>
 
-                            <p className="text-slate-600 mb-6 leading-relaxed">
+                            <p className="text-slate-400 mb-6 leading-relaxed">
                                 {service.description}
                             </p>
 
                             <Link
                                 href={service.link}
-                                className="inline-flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all"
+                                className="inline-flex items-center text-amber-500 font-semibold group-hover:gap-2 transition-all"
                             >
                                 Learn more <ArrowRight className="w-4 h-4 ml-1" />
                             </Link>
