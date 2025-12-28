@@ -41,10 +41,12 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold text-lg mb-6">Services</h4>
                         <ul className="space-y-3">
-                            <li><Link href="#" className="hover:text-amber-500 transition-colors">Skilled Worker Visa</Link></li>
-                            <li><Link href="#" className="hover:text-amber-500 transition-colors">Student Visa</Link></li>
-                            <li><Link href="#" className="hover:text-amber-500 transition-colors">Spouse Visa</Link></li>
-
+                            <li><Link href="/services/skilled-worker" className="hover:text-amber-500 transition-colors">Skilled Worker Visa</Link></li>
+                            <li><Link href="/services/student-visa" className="hover:text-amber-500 transition-colors">Student Visa</Link></li>
+                            <li><Link href="/services/business" className="hover:text-amber-500 transition-colors">Business Migration</Link></li>
+                            <li><Link href="/services/family" className="hover:text-amber-500 transition-colors">Spouse & Family</Link></li>
+                            <li><Link href="/services/visitor" className="hover:text-amber-500 transition-colors">Tourist & Visitor Visas</Link></li>
+                            <li><Link href="/services/passport" className="hover:text-amber-500 transition-colors">Passport Services</Link></li>
                         </ul>
                     </div>
 
