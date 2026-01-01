@@ -26,8 +26,8 @@ export default function Contact() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    access_key: 'f454af15-52bb-4f20-a2ea-0ad511544cf1',
-                    to_email: 'matrixvisa07@gmail.com, himaniwork489@gmail.com',
+                    access_key: '1e990e23-c2ec-4546-b9c2-381abfd0f748',
+                    to_email: 'matrixvisa07@gmail.com',
                     from_name: `${formData.firstName} ${formData.lastName}`,
                     subject: `New Visa Inquiry: ${formData.visaType || 'General'}`,
                     email: formData.email,
@@ -42,13 +42,13 @@ export default function Contact() {
                 setFormData({ firstName: '', lastName: '', email: '', phone: '', visaType: '', message: '' });
             } else {
                 // Fallback: Open email client
-                const mailtoLink = `mailto:matrixvisa07@gmail.com,himaniwork489@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+                const mailtoLink = `mailto:matrixvisa07@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
                 window.location.href = mailtoLink;
                 setStatus('success');
             }
         } catch (error) {
             // Fallback: Open email client
-            const mailtoLink = `mailto:matrixvisa07@gmail.com,himaniwork489@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+            const mailtoLink = `mailto:matrixvisa07@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
             window.location.href = mailtoLink;
             setStatus('success');
         }
