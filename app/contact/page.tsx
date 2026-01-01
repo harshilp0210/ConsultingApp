@@ -26,8 +26,8 @@ export default function Contact() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    access_key: 'YOUR_ACCESS_KEY', // User needs to get this from web3forms.com
-                    to_email: 'matrixvisa07@gmail.com',
+                    access_key: 'f454af15-52bb-4f20-a2ea-0ad511544cf1',
+                    to_email: 'matrixvisa07@gmail.com, harshilp.job10@gmail.com',
                     from_name: `${formData.firstName} ${formData.lastName}`,
                     subject: `New Visa Inquiry: ${formData.visaType || 'General'}`,
                     email: formData.email,
