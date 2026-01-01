@@ -51,11 +51,11 @@ export default function Hero() {
                                 <p className="text-sm text-slate-500 mt-1 font-medium">Success Rate</p>
                             </div>
                             <div>
-                                <p className="text-3xl font-bold text-white">5k+</p>
+                                <p className="text-3xl font-bold text-white">500+</p>
                                 <p className="text-sm text-slate-500 mt-1 font-medium">Visas Approved</p>
                             </div>
                             <div>
-                                <p className="text-3xl font-bold text-white">15+</p>
+                                <p className="text-3xl font-bold text-white">5+</p>
                                 <p className="text-sm text-slate-500 mt-1 font-medium">Years Experience</p>
                             </div>
                         </div>
@@ -107,8 +107,8 @@ export default function Hero() {
                                                 <TrendingUp className="w-6 h-6" />
                                             </div>
                                             <div>
-                                                <h3 className="font-bold leading-tight text-sm">Free 'Life in UK' Course</h3>
-                                                <p className="text-xs opacity-80 mt-1 font-medium">Included at no extra cost</p>
+                                                <h3 className="font-bold leading-tight text-sm">'Life in UK' Course</h3>
+                                                <p className="text-xs opacity-80 mt-1 font-medium">Included with visa services</p>
                                             </div>
                                         </div>
                                     </div>

@@ -31,8 +31,8 @@ export default function WhyChooseUs() {
         },
         {
             icon: Zap, // Using Zap for now, or import BookOpen if preferred
-            title: "Free 'Life in UK' Course",
-            description: "We provide the essential 'Life in the UK' training course at no extra cost to ensure your settlement journey is smooth.",
+            title: "'Life in UK' Course",
+            description: "We provide the essential 'Life in the UK' training course to ensure your settlement journey is smooth.",
             color: "text-blue-400 bg-blue-500/10"
         }
     ];

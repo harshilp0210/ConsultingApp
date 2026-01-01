@@ -81,7 +81,7 @@ export default function Footer() {
 
                 <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-slate-600">
-                        © 2024 Matrix Visa Consultancy. All rights reserved. Regulated by OISC.
+                        © 2025 Matrix Visa Consultancy. All rights reserved.
                     </p>
                     <div className="flex gap-4 md:pr-24">
                         <Link href="#" className="text-slate-500 hover:text-amber-500 transition-colors"><Facebook className="w-5 h-5" /></Link>
