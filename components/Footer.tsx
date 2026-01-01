@@ -45,6 +45,7 @@ export default function Footer() {
                             <li><Link href="/services/student-visa" className="hover:text-amber-500 transition-colors">Student Visa</Link></li>
                             <li><Link href="/services/business" className="hover:text-amber-500 transition-colors">Business Migration</Link></li>
                             <li><Link href="/services/family" className="hover:text-amber-500 transition-colors">Spouse & Family</Link></li>
+                            <li><Link href="/services/citizenship" className="hover:text-amber-500 transition-colors">British Citizenship</Link></li>
                             <li><Link href="/services/visitor" className="hover:text-amber-500 transition-colors">Tourist & Visitor Visas</Link></li>
                             <li><Link href="/services/passport" className="hover:text-amber-500 transition-colors">Passport Services</Link></li>
                         </ul>

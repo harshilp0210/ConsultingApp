@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Plane, Scale, GraduationCap, Building2, Globe, Briefcase, Book } from 'lucide-react';
+import { ArrowRight, Plane, Scale, GraduationCap, Building2, Globe, Briefcase, Book, Crown } from 'lucide-react';
 
 const services = [
     {
@@ -26,7 +26,12 @@ const services = [
         description: "Reunite with your loved ones. We handle complex family visa applications with care and precision.",
         link: "/services/family"
     },
-
+    {
+        icon: Crown,
+        title: "British Citizenship",
+        description: "Expert guidance through naturalisation, registration, and citizenship applications. Make the UK your permanent home.",
+        link: "/services/citizenship"
+    },
     {
         icon: Plane,
         title: "Tourist & Visitor Visas",

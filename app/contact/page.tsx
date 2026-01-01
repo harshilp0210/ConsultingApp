@@ -202,6 +202,7 @@ export default function Contact() {
                                         <option value="skilled-worker" className="bg-slate-900">Skilled Worker Visa</option>
                                         <option value="student" className="bg-slate-900">Student Visa</option>
                                         <option value="spouse" className="bg-slate-900">Spouse / Family Visa</option>
+                                        <option value="citizenship" className="bg-slate-900">British Citizenship</option>
                                         <option value="visitor" className="bg-slate-900">Visitor Visa</option>
                                         <option value="business" className="bg-slate-900">Business Migration</option>
                                         <option value="passport" className="bg-slate-900">Passport Services</option>
