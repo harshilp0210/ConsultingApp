@@ -48,6 +48,8 @@ export default function Footer() {
                             <li><Link href="/services/citizenship" className="hover:text-amber-500 transition-colors">British Citizenship</Link></li>
                             <li><Link href="/services/visitor" className="hover:text-amber-500 transition-colors">Tourist & Visitor Visas</Link></li>
                             <li><Link href="/services/passport" className="hover:text-amber-500 transition-colors">Passport Services</Link></li>
+                            <li><Link href="/services/us-citizenship" className="hover:text-amber-500 transition-colors">US Citizenship</Link></li>
+                            <li><Link href="/services/oci" className="hover:text-amber-500 transition-colors">OCI Services</Link></li>
                         </ul>
                     </div>
 

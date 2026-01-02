@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Plane, Scale, GraduationCap, Building2, Globe, Briefcase, Book, Crown } from 'lucide-react';
+import { ArrowRight, Plane, Scale, GraduationCap, Building2, Globe, Briefcase, Book, Crown, Flag, Users2 } from 'lucide-react';
 
 const services = [
     {
@@ -43,6 +43,18 @@ const services = [
         title: "Passport Services",
         description: "Expedited passport applications, renewals, and replacements for UK citizens.",
         link: "/services/passport"
+    },
+    {
+        icon: Flag,
+        title: "US Citizenship",
+        description: "Expert guidance for US naturalization, Green Card applications, and citizenship by investment.",
+        link: "/services/us-citizenship"
+    },
+    {
+        icon: Users2,
+        title: "OCI Services",
+        description: "Overseas Citizen of India card applications, renewals, and miscellaneous services for the Indian diaspora.",
+        link: "/services/oci"
     }
 ];
 
