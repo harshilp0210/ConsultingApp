@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'VisaExperts - Premier UK Immigration Consultancy',
   description: 'Expert guidance for UK Visas, Citizenship, and Settlement. Regulated immigration advisors helping you move to the UK.',
+  verification: {
+    other: {
+      'msvalidate.01': 'EAAB6B56735D1CE8A6881C818A7AED2B',
+    },
+  },
 };
 
 export default function RootLayout({
