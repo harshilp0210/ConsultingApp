@@ -10,17 +10,17 @@ const testimonials = [
         rating: 5
     },
     {
-        name: "Pithadiya Dhrumi",
+        name: "Deep BipinBhai Patel",
         role: "Skilled Worker Visa",
-        image: "/success-stories/pithadiya-dhrumi.png",
-        content: "Grateful for the expert guidance in securing my Skilled Worker Visa. Highly recommended for their professionalism.",
+        image: "/success-stories/deep-face.jpg",
+        content: "Matrix Visa Consultancy transformed a complex visa process into a clear, manageable path. Their expertise in Skilled Worker Visas meant every document was perfect. I couldn't be happier with the outcome.",
         rating: 5
     },
     {
-        name: "Sharma Dimple & Family",
-        role: "Skilled Worker & Dependents",
-        image: "/success-stories/sharma-family.png",
-        content: "A big thank you to the team for helping our entire family move to the UK. Excellent support throughout the journey!",
+        name: "Vagadiya Komalben Ajaykumar",
+        role: "Skilled Worker Visa & Dependents",
+        image: "/success-stories/vagadiya-face.jpg",
+        content: "Moving my family to the UK seemed like a huge challenge, but the team here made it look easy. Their handling of our Skilled Worker and Dependent visas was flawless. Truly professional!",
         rating: 5
     }
 ];
