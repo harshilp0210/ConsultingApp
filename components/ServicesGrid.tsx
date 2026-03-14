@@ -28,6 +28,12 @@ const services = [
     },
     {
         icon: Crown,
+        title: "ILR (Indefinite Leave to Remain)",
+        description: "Expert solicitor team to handle your ILR application, regardless of case complexity. Secure your permanent stay in the UK.",
+        link: "/services/ilr"
+    },
+    {
+        icon: Crown,
         title: "British Citizenship",
         description: "Expert guidance through naturalisation, registration, and citizenship applications. Make the UK your permanent home.",
         link: "/services/citizenship"
