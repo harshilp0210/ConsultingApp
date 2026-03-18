@@ -23,6 +23,10 @@ export default function Footer() {
                         <p className="text-slate-500 mb-6 leading-relaxed">
                             Regulated immigration advice for peace of mind. Your trusted partner for all UK visa and citizenship applications.
                         </p>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 border border-slate-800 rounded-lg text-sm font-semibold text-slate-300 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                            OISC Regulated Advisor
+                        </div>
                     </div>
 
                     {/* Quick Links */}
@@ -83,15 +87,37 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-sm text-slate-600">
-                        © 2025 Matrix Visa Consultancy. All rights reserved.
-                    </p>
+                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                        <p className="text-sm text-slate-600">
+                            © 2025 Matrix Visa Consultancy. All rights reserved.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Link href="/legal/privacy" className="text-sm text-slate-600 hover:text-amber-500 transition-colors">Privacy Policy</Link>
+                            <Link href="/legal/terms" className="text-sm text-slate-600 hover:text-amber-500 transition-colors">Terms & Conditions</Link>
+                            <Link href="/legal/refund" className="text-sm text-slate-600 hover:text-amber-500 transition-colors">Cancellation / Refund Policy</Link>
+                        </div>
+                    </div>
                     <div className="flex gap-4 md:pr-24">
                         <Link href="#" className="text-slate-500 hover:text-amber-500 transition-colors"><Facebook className="w-5 h-5" /></Link>
                         <Link href="#" className="text-slate-500 hover:text-amber-500 transition-colors"><Twitter className="w-5 h-5" /></Link>
                         <Link href="https://www.instagram.com/matrixvisa07/" className="text-slate-500 hover:text-amber-500 transition-colors"><Instagram className="w-5 h-5" /></Link>
                         <Link href="#" className="text-slate-500 hover:text-amber-500 transition-colors"><Linkedin className="w-5 h-5" /></Link>
                     </div>
+                </div>
+
+                {/* Powered by OpenRize */}
+                <div className="mt-6 pt-4 border-t border-slate-900 text-center">
+                    <p className="text-xs text-slate-600">
+                        Powered by{' '}
+                        <a
+                            href="https://www.openrize.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-amber-500 hover:text-amber-400 font-semibold transition-colors"
+                        >
+                            OPENRIZE
+                        </a>
+                    </p>
                 </div>
             </div>
 
