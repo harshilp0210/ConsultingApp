@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer className="bg-slate-950 text-slate-400 pt-16 pb-8 border-t border-slate-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
                     {/* Brand */}
                     <div>
                         <div className="flex items-center gap-3 mb-6">

@@ -1,7 +1,9 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ServicesGrid from '../components/ServicesGrid';
+import HowItWorks from '../components/HowItWorks';
 import SuccessStories from '../components/SuccessStories';
+import FAQ from '../components/FAQ';
 
 export default function Home() {
   return (
@@ -9,7 +11,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ServicesGrid />
+      <HowItWorks />
       <SuccessStories />
+      <FAQ />
 
       {/* CTA Section */}
       <section className="py-20 bg-slate-900 relative overflow-hidden border-t border-slate-800">

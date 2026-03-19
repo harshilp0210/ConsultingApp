@@ -9,6 +9,7 @@ export default function Contact() {
         lastName: '',
         email: '',
         phone: '',
+        country: '',
         visaType: '',
         message: ''
     });
@@ -32,6 +33,7 @@ export default function Contact() {
                     subject: `New Visa Inquiry: ${formData.visaType || 'General'}`,
                     email: formData.email,
                     phone: formData.phone,
+                    country: formData.country,
                     visa_type: formData.visaType,
                     message: formData.message,
                 }),
@@ -39,16 +41,16 @@ export default function Contact() {
 
             if (response.ok) {
                 setStatus('success');
-                setFormData({ firstName: '', lastName: '', email: '', phone: '', visaType: '', message: '' });
+                setFormData({ firstName: '', lastName: '', email: '', phone: '', country: '', visaType: '', message: '' });
             } else {
                 // Fallback: Open email client
-                const mailtoLink = `mailto:matrixvisa07@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+                const mailtoLink = `mailto:matrixvisa07@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACountry: ${formData.country}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
                 window.location.href = mailtoLink;
                 setStatus('success');
             }
         } catch (error) {
             // Fallback: Open email client
-            const mailtoLink = `mailto:matrixvisa07@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+            const mailtoLink = `mailto:matrixvisa07@gmail.com?subject=Visa Inquiry: ${formData.visaType}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACountry: ${formData.country}%0D%0AVisa Type: ${formData.visaType}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
             window.location.href = mailtoLink;
             setStatus('success');
         }
@@ -190,24 +192,38 @@ export default function Contact() {
                                     </div>
                                 </div>
 
-                                <div>
-                                    <label htmlFor="visaType" className="block text-sm font-semibold text-slate-300 mb-2">Visa Type Interest</label>
-                                    <select
-                                        id="visaType"
-                                        value={formData.visaType}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-950 text-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all cursor-pointer"
-                                    >
-                                        <option value="" className="bg-slate-900">Select a visa type...</option>
-                                        <option value="skilled-worker" className="bg-slate-900">Skilled Worker Visa</option>
-                                        <option value="student" className="bg-slate-900">Student Visa</option>
-                                        <option value="spouse" className="bg-slate-900">Spouse / Family Visa</option>
-                                        <option value="citizenship" className="bg-slate-900">British Citizenship</option>
-                                        <option value="visitor" className="bg-slate-900">Visitor Visa</option>
-                                        <option value="business" className="bg-slate-900">Business Migration</option>
-                                        <option value="passport" className="bg-slate-900">Passport Services</option>
-                                        <option value="other" className="bg-slate-900">Other / Not Sure</option>
-                                    </select>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label htmlFor="country" className="block text-sm font-semibold text-slate-300 mb-2">Country of Residence</label>
+                                        <input
+                                            type="text"
+                                            id="country"
+                                            value={formData.country}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-950 text-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all placeholder:text-slate-600"
+                                            placeholder="e.g. United Kingdom"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="visaType" className="block text-sm font-semibold text-slate-300 mb-2">Visa Type Interest</label>
+                                        <select
+                                            id="visaType"
+                                            value={formData.visaType}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-700 bg-slate-950 text-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all cursor-pointer"
+                                        >
+                                            <option value="" className="bg-slate-900">Select a visa type...</option>
+                                            <option value="skilled-worker" className="bg-slate-900">Skilled Worker Visa</option>
+                                            <option value="student" className="bg-slate-900">Student Visa</option>
+                                            <option value="spouse" className="bg-slate-900">Spouse / Family Visa</option>
+                                            <option value="citizenship" className="bg-slate-900">British Citizenship</option>
+                                            <option value="visitor" className="bg-slate-900">Visitor Visa</option>
+                                            <option value="business" className="bg-slate-900">Business Migration</option>
+                                            <option value="passport" className="bg-slate-900">Passport Services</option>
+                                            <option value="other" className="bg-slate-900">Other / Not Sure</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div>
@@ -242,6 +258,23 @@ export default function Contact() {
                                 </button>
                             </form>
                         )}
+                    </div>
+                </div>
+
+                {/* Calendar Integration Placeholder */}
+                <div className="mt-24 pt-16 border-t border-slate-800 text-center">
+                    <h2 className="text-3xl font-bold text-white mb-6">Schedule a Discovery Call</h2>
+                    <p className="text-slate-400 mb-12 max-w-2xl mx-auto">
+                        Prefer to speak directly with an expert? Choose a time that works for you using our online scheduler.
+                    </p>
+                    <div className="bg-slate-900 border border-slate-800 rounded-2xl h-[600px] flex items-center justify-center max-w-4xl mx-auto">
+                        <div className="text-slate-500 flex flex-col items-center">
+                            <span className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-4 text-amber-500">
+                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </span>
+                            <span className="font-semibold text-lg">Calendar Scheduling Tool</span>
+                            <span className="text-sm mt-2">(e.g., Calendly iframe will be embedded here)</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -30,10 +30,17 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Why Choose Us', href: '/why-choose-us' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Success Stories', href: '/#success-stories' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Services', href: '/#services', dropdown: [
+      { name: 'Skilled Worker Visa', href: '/services/skilled-worker' },
+      { name: 'Student Visa', href: '/services/student-visa' },
+      { name: 'Spouse & Family', href: '/services/family' },
+      { name: 'Visitor Visas', href: '/services/visitor' },
+      { name: 'Citizenship', href: '/services/citizenship' },
+      { name: 'Passport & OCI', href: '/services/passport' }
+    ]},
+    { name: 'Process', href: '/#process' },
+    { name: 'Testimonials', href: '/#success-stories' },
+    { name: 'Pricing', href: '/pricing' }
   ];
 
   return (
@@ -43,39 +50,60 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             {/* Logo - Matrix */}
             <Link href="/" className="flex-shrink-0 flex items-center gap-3 group">
-              <div className="relative w-20 h-20 overflow-hidden rounded-full shadow-lg border-2 border-slate-700 group-hover:border-amber-500 transition-colors">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 overflow-hidden rounded-full shadow-lg border-2 border-slate-700 group-hover:border-amber-500 transition-colors">
                 <img
                   src="/logo-new.png"
                   alt="Matrix Logo"
                   className="object-cover w-full h-full"
                 />
               </div>
-              <span className={`font-bold text-2xl tracking-tight transition-colors ${scrolled ? 'text-slate-100' : 'text-slate-100'}`}>
+              <span className={`font-bold text-xl lg:text-2xl tracking-tight transition-colors ${scrolled ? 'text-slate-100' : 'text-slate-100'}`}>
                 Matrix
               </span>
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors uppercase tracking-wide"
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name} className="relative group py-2">
+                  <Link
+                    href={link.href}
+                    className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors uppercase tracking-wide"
+                  >
+                    {link.name}
+                    {link.dropdown && (
+                      <svg className="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                  </Link>
+                  {link.dropdown && (
+                    <div className="absolute top-full left-0 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="bg-slate-900 border border-slate-800 rounded-xl shadow-xl overflow-hidden py-1">
+                        {link.dropdown.map((sublink) => (
+                          <Link
+                            key={sublink.name}
+                            href={sublink.href}
+                            className="block px-5 py-3 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-amber-500 transition-colors"
+                          >
+                            {sublink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
               <Link
                 href="/contact"
                 className="btn-primary px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide"
               >
-                Consult Now
+                Book Consultation
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
+            <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-slate-100 hover:text-amber-500 focus:outline-none transition-colors p-2 relative z-[60]"
@@ -91,14 +119,14 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div
-          className="md:hidden fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm"
+          className="lg:hidden fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-full max-w-sm z-[56] bg-slate-950 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`lg:hidden fixed top-0 right-0 h-full w-full max-w-sm z-[56] bg-slate-950 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
           } transition-transform duration-300 ease-in-out border-l border-slate-800 shadow-2xl`}
       >
         {/* Close button inside menu */}
@@ -115,14 +143,29 @@ export default function Navbar() {
         <div className="px-8 pb-8 h-[calc(100%-80px)] overflow-y-auto">
           <div className="flex flex-col space-y-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-2xl font-bold text-slate-100 hover:text-amber-500 transition-colors tracking-tight py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
+              <div key={link.name}>
+                <Link
+                  href={link.href}
+                  className="text-2xl font-bold text-slate-100 hover:text-amber-500 transition-colors tracking-tight py-2 block"
+                  onClick={() => !link.dropdown && setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+                {link.dropdown && (
+                  <div className="pl-4 mt-2 space-y-3 border-l-2 border-slate-800">
+                    {link.dropdown.map((sublink) => (
+                      <Link
+                        key={sublink.name}
+                        href={sublink.href}
+                        className="block text-lg text-slate-400 hover:text-amber-500 transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
 
             <div className="pt-6 border-t border-slate-800">

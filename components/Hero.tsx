@@ -9,9 +9,9 @@ export default function Hero() {
             <div className="absolute bottom-0 left-0 translate-y-24 -translate-x-24 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
                     {/* Text Content */}
-                    <div className="space-y-8 animate-in slide-in-from-left-4 fade-in duration-1000 max-w-2xl">
+                    <div className="space-y-6 sm:space-y-8 animate-in slide-in-from-left-4 fade-in duration-1000">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-amber-500 font-semibold text-sm">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -20,13 +20,14 @@ export default function Hero() {
                             #1 Visa Consultancy in London
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-                            Your Gateway to <br />
-                            <span className="text-amber-500">the UK.</span>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                            Visa & Immigration <br />
+                            <span className="text-amber-500">Experts</span>
+                            <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-300 font-medium tracking-normal">— UK, US, Canada, Schengen & More</span>
                         </h1>
 
-                        <p className="text-xl text-slate-400 max-w-lg leading-relaxed">
-                            Expert guidance for Visas, Citizenship, and Settlement. We simplify the complex immigration process for you.
+                        <p className="text-xl text-slate-400 max-w-lg leading-relaxed mt-6">
+                            Expert guidance from application to approval with personalized support and proven success.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -34,18 +35,18 @@ export default function Hero() {
                                 href="/contact"
                                 className="inline-flex justify-center items-center px-8 py-4 text-base font-bold text-slate-950 bg-amber-500 rounded-full hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/25 active:scale-95"
                             >
-                                Start Application
+                                Start Your Application
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </Link>
                             <Link
-                                href="#services"
+                                href="/contact"
                                 className="inline-flex justify-center items-center px-8 py-4 text-base font-bold text-slate-300 bg-slate-900 border border-slate-700 rounded-full hover:bg-slate-800 hover:text-white transition-all shadow-sm active:scale-95"
                             >
-                                Explore Services
+                                Book Free Consultation
                             </Link>
                         </div>
 
-                        <div className="pt-8 border-t border-slate-800 grid grid-cols-3 gap-8">
+                        <div className="pt-6 md:pt-8 border-t border-slate-800 grid grid-cols-3 gap-4 md:gap-8">
                             <div>
                                 <p className="text-3xl font-bold text-white">98%</p>
                                 <p className="text-sm text-slate-500 mt-1 font-medium">Success Rate</p>
@@ -61,8 +62,8 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* Hero Image / Visual - Clean Professional */}
-                    <div className="relative lg:ml-auto animate-in slide-in-from-right-4 fade-in duration-1000 delay-200 w-full">
+                    {/* Hero Image / Visual - shown on md+ */}
+                    <div className="relative md:ml-auto animate-in slide-in-from-right-4 fade-in duration-1000 delay-200 w-full">
                         <div className="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-square lg:aspect-[4/5] bg-slate-900 border border-slate-800 shadow-2xl">
                             <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50"></div>
 

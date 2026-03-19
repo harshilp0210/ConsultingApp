@@ -5,62 +5,38 @@ const services = [
     {
         icon: Briefcase,
         title: "Skilled Worker Visa",
-        description: "Secure your future in the UK with expert guidance on employer sponsorship and point-based system requirements.",
+        description: "Employer sponsorship & point-based support. Secure your future in the UK.",
         link: "/services/skilled-worker"
     },
     {
         icon: GraduationCap,
         title: "Student Visa",
-        description: "Comprehensive support for international students, from university acceptance to visa issuance.",
+        description: "From university acceptance to issuance. Comprehensive support for international students.",
         link: "/services/student-visa"
     },
     {
-        icon: Building2,
-        title: "Business Migration",
-        description: "Strategic advice for entrepreneurs and investors looking to establish or expand their business in the UK.",
-        link: "/services/business"
-    },
-    {
         icon: Scale,
-        title: "Spouse & Family",
-        description: "Reunite with your loved ones. We handle complex family visa applications with care and precision.",
+        title: "Spouse & Family Visa",
+        description: "Reunite with your loved ones smoothly. We handle complex family visa applications with care.",
         link: "/services/family"
     },
     {
-        icon: Crown,
-        title: "ILR (Indefinite Leave to Remain)",
-        description: "Expert solicitor team to handle your ILR application, regardless of case complexity. Secure your permanent stay in the UK.",
-        link: "/services/ilr"
-    },
-    {
-        icon: Crown,
-        title: "British Citizenship",
-        description: "Expert guidance through naturalisation, registration, and citizenship applications. Make the UK your permanent home.",
-        link: "/services/citizenship"
-    },
-    {
         icon: Plane,
-        title: "Tourist & Visitor Visas",
-        description: "Expert assistance for USA, Canada, Australia, New Zealand, Schengen Visa (Europe), Japan, and China.",
+        title: "Visitor & Tourist Visas",
+        description: "Expert assistance for UK, USA, Canada, Australia, and Schengen visa applications.",
         link: "/services/visitor"
     },
     {
+        icon: Crown,
+        title: "Citizenship & Settlement",
+        description: "Guidance through naturalisation and settlement process. Make your permanent home.",
+        link: "/services/citizenship"
+    },
+    {
         icon: Book,
-        title: "Passport Services",
-        description: "Expedited passport applications, renewals, and replacements for UK citizens.",
+        title: "Passport & OCI Services",
+        description: "Renewals, replacements, OCI card support, and miscellaneous services for the Indian diaspora.",
         link: "/services/passport"
-    },
-    {
-        icon: Flag,
-        title: "US Citizenship",
-        description: "Expert guidance for US naturalization, Green Card applications, and citizenship by investment.",
-        link: "/services/us-citizenship"
-    },
-    {
-        icon: Users2,
-        title: "OCI Services",
-        description: "Overseas Citizen of India card applications, renewals, and miscellaneous services for the Indian diaspora.",
-        link: "/services/oci"
     }
 ];
 
@@ -77,7 +53,7 @@ export default function ServicesGrid() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {services.map((service, index) => (
                         <div
                             key={index}

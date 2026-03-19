@@ -3,24 +3,24 @@ import Image from 'next/image';
 
 const testimonials = [
     {
-        name: "Mehul Kiritbhai Patel",
+        name: "Mehul K.",
         role: "Skilled Worker Visa",
         image: "/success-stories/mehul-patel.png",
-        content: "Successfully switched to a Skilled Worker Visa. Matrix Visa Consultancy made the process seamless and stress-free.",
+        content: "Thanks to Matrix, I secured my Skilled Worker Visa and started work in the UK!",
         rating: 5
     },
     {
-        name: "Deep BipinBhai Patel",
+        name: "Deep P.",
         role: "Skilled Worker Visa",
         image: "/success-stories/deep-face.jpg",
-        content: "Matrix Visa Consultancy transformed a complex visa process into a clear, manageable path. Their expertise in Skilled Worker Visas meant every document was perfect. I couldn't be happier with the outcome.",
+        content: "Matrix Visa Consultancy transformed a complex visa process into a clear path. My Skilled Worker Visa was approved without any hassle!",
         rating: 5
     },
     {
-        name: "Vagadiya Komalben Ajaykumar",
+        name: "Vagadiya K.",
         role: "Skilled Worker Visa & Dependents",
         image: "/success-stories/vagadiya-face.jpg",
-        content: "Moving my family to the UK seemed like a huge challenge, but the team here made it look easy. Their handling of our Skilled Worker and Dependent visas was flawless. Truly professional!",
+        content: "Moving my family to the UK seemed like a huge challenge. Their handling of our Dependent visas was flawless and we are now happily settled.",
         rating: 5
     }
 ];
@@ -49,7 +49,7 @@ export default function SuccessStories() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className="bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-800 flex flex-col h-full relative group hover:-translate-y-1 transition-transform duration-300">
                             <Quote className="absolute top-8 right-8 text-slate-700 w-12 h-12 rotate-180" />
