@@ -21,12 +21,8 @@ export default function Footer() {
                             </span>
                         </div>
                         <p className="text-slate-500 mb-6 leading-relaxed">
-                            Regulated immigration advice for peace of mind. Your trusted partner for all UK visa and citizenship applications.
+                            Your trusted partner for all UK visa and citizenship applications.
                         </p>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 border border-slate-800 rounded-lg text-sm font-semibold text-slate-300 mb-6">
-                            <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                            OISC Regulated Advisor
-                        </div>
                     </div>
 
                     {/* Quick Links */}

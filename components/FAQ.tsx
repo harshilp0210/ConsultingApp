@@ -5,10 +5,6 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 
 const faqs = [
     {
-        question: "Are you regulated?",
-        answer: "Yes, we are fully regulated to provide immigration advice and services, ensuring your application is handled with the highest professional standards."
-    },
-    {
         question: "How long does a typical visa application take?",
         answer: "Processing times vary significantly depending on the visa type and current Home Office wait times. Standard applications can take 3-8 weeks, while priority services can reduce this to a few days. We will provide a specific timeline for your case during consultation."
     },
